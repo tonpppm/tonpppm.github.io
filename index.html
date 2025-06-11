@@ -26,7 +26,7 @@
       margin: 0;
       padding: 0;
       font-size: 16px;
-      font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", sans-serif;
+      font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "筑紫ゴシック Pr5 M", sans-serif;
       text-align: start;
       line-height: 1.7;
     }
@@ -126,26 +126,11 @@
         min-height: 100%;
         display: flex;
         flex-direction: column;
-        padding: 1em;
+        padding: 2em;
         background: #fff; /* 白背景 */
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* ふんわり影を追加 */
       }
 
-    /* 💻800px以上のモニターでは横幅固定 */
-      @media screen and (min-width: 800px) {
-        .wrapper {
-          max-width: 800px;
-          margin: 0 auto;
-        }
-        #toTopBtn {
-          opacity: 0.8 !important; /* 常に見えるように */
-          pointer-events: auto !important; /* 押せるように */
-        }
-        .footer-link .footer-link-button {
-          font-size: 1.8em;
-          letter-spacing: -0.2em;
-        }
-      }
 
     /* フッター */
     .site-footer {
@@ -161,7 +146,7 @@
 
     h1 {
       color: #333; /* 黒文字 */
-      font-size: 1.8em;
+      font-size: 1.5em;
       text-align: center;
       margin: 1em 0 1em 0;
     }
@@ -536,7 +521,7 @@
       gap: 10px;
       width: 100%;
       max-width: 500px;
-      padding: 0 1em;
+      padding: 0 0.5em;
     }
 
     .link-button {
@@ -637,7 +622,7 @@
       font-weight: bold;
       letter-spacing: -0.03em; /* 文字の間隔を少し狭く */
       text-align: center;
-      padding: 10px 1.2em;
+      padding: 10px 0.8em;
       border: 2px solid; /* タブの枠線 */
       border-color: #ffadba; /* タブの枠線の色 */
       border-radius: 30px; /* タブを丸く */
@@ -685,7 +670,7 @@
       transform: translateX(0); /* ←初期位置は変えず、出現時だけアニメ */
       transition: transform 0.3s 80ms, opacity 0.3s 80ms;
       width: 100%;
-      padding: 0 1.2em;
+      padding: 0 0.2em;
       overflow: hidden; /* 余分に出るのを防ぐ！ */
     }
 
@@ -728,6 +713,35 @@
     .tab-switch {
       display: none;
     }
+
+    /* 💻800px以上のモニターでは横幅固定 */
+    @media screen and (min-width: 800px) {
+      .wrapper {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      #toTopBtn {
+        opacity: 0.8 !important; /* 常に見えるように */
+        pointer-events: auto !important; /* 押せるように */
+      }
+      .footer-link .footer-link-button {
+        font-size: 1.8em;
+        letter-spacing: -0.2em;
+      }
+
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .wrapper {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 1em;
+      }
+    }
+
   </style>
 </head>
 

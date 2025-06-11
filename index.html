@@ -164,22 +164,24 @@
       border-left: 8px solid #ffadba; /* 見出しの左線をピンクに */
     }
 
-    h4 {
-      color: #333; /* 黒文字 */
-      position: relative;/*相対位置*/
-      font-size: 1.2em;   
-      margin-top: 1.2em;   
-      padding-left: 1.1em;/*アイコン分のスペース*/
+    .heading4 {
+      display: flex;
+      align-items: flex-start; /* ルビの高さに合わせて上揃え */
+      color: #333;
+      font-size: 1.2em;
+      margin-top: 1.2em;
+      gap: 0.3em;
     }
-    h4:before {
-      content: '';
-      position: absolute;
-      top: 0.35em; /*アイコンの上下位置調整 */
-      left: 0; /*アイコンの位置 */
+    .heading4 .dot {
+      flex-shrink: 0;
       width: 0.9em;
       height: 0.9em;
-      background-color: #a5614a; /* 見出しの丸を茶色に */
+      margin-top: 0.4em; /* 丸の縦位置調整 */
+      background-color: #a5614a;
       border-radius: 50%;
+    }
+    .heading4 ruby {
+      line-height: 1.3; /* ルビ付きでも高さ整える */
     }
 
     p {
@@ -931,7 +933,8 @@
 
         <h2 id="chapter2">チャンネルガイドライン</h2>
         <h3>コンテンツの使用について</h3>
-        <h4>イラストの無断転載禁止</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>イラストの無断転載禁止</h4>
         <p>
           とんが描いた絵や、とんのV姿を、YouTubeやSNSなどのアイコン・バナーに使うことは禁止です。スマホの壁紙やLINEのトークルームなど、私的使用の範囲で使うのはOKです（非営利目的に限ります）。
         </p>
@@ -958,11 +961,13 @@
             <td>スマホの待ち受けや壁紙など</td><td class="ok">○</td><td class="ok">○</td>
           </tr>
         </table>
-        <h4>切り抜きや転載の禁止</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>切り抜きや転載の禁止</h4>
         <p>
           とんのYouTube動画や配信の無断転載・切り抜き・使用は、すべて禁止しています。
         </p>
-        <h4>AI学習の禁止</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>AI学習の禁止</h4>
         <p>
           とんのYouTubeやSNSに投稿されたコンテンツをAIに学習させることは禁止です。<br><br>
         </p>
@@ -977,16 +982,19 @@
         </p>
 
         <h3>送り方</h3>
-        <h4>1．X（旧Twitter）で投稿</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>1．X（旧Twitter）で投稿</h4>
         <p>
           Xで「<b>#とんあーとん</b>」のハッシュタグを付けて投稿してください。この方法が最も動画で紹介しやすいです。
         </p>
-        <h4>2．ファンレター</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>2．ファンレター</h4>
         <p>
           Xをやっていない方は、お手紙で送ってもOKです。<br>
           ファンアートに「<b>#とんあーとん</b>」と書いていただければ、私が写真を撮って動画で紹介することがあります。
         </p>
-        <h4>3．その他</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>3．その他</h4>
         <p>
           どちらの方法でもできない方はその他の方法で投稿していただいても構いませんが、見にいけない可能性があることと、動画で紹介できないことをご了承ください。<br><br>
         </p>
@@ -1025,18 +1033,23 @@
         <hr>
 
         <h2 id="chapter4">Xでの交流について</h2>
-        <h4>フォローバック</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>フォローバック</h4>
         <p>フォローバックはしません。ご了承ください。</p>
-        <h4>リプライ</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>リプライ</h4>
         <p>フォロー・フォロー外問わず、リプライはとても嬉しいです✨</p>
-        <h4>いいねとリプ返</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>いいねとリプ返</h4>
         <p>
           遅くなることもありますが、いいねはなるべくしたいと思います。<br>
           リプ返はできるときにしています。催促はしないでください。
         </p>
-        <h4>DM</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>DM</h4>
         <p>リスナーからの個人的なDMには返答できません。</p>
-        <h4>鍵垢（とんの隠れ家）のフォロー許可</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>鍵垢（とんの隠れ家）のフォロー許可</h4>
         <p>
           誰でもフォロー申請OKです。<br>
           新しいアカウント、ご自身の投稿がないアカウント、攻撃的なアカウント、その他怪しいアカウントは許可できません。<br><br>
@@ -1045,27 +1058,32 @@
         <hr>
 
         <h2 id="chapter5">フレンドについて</h2>
-        <h4>ゲーム機</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>ゲーム機</h4>
         <p>
           Nintendo SwitchおよびNintendo Switch2のフレンドは募集していません。<br>
           フレンドコードをコメント欄等に書き込まないでください。
         </p>
-        <h4>スマホゲーム/アプリ</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>スマホゲーム/アプリ</h4>
         <p>
           一部のスマホゲームではフレンドを募集することがあります。<br>
           人数の上限があるため、全員に申請許可ができないことをご了承ください。
         </p>
-        <h4>フレンド解除</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>フレンド解除</h4>
         <p>
           ログイン頻度の少ないフレンドを予告なく解除する場合があります。<br>
           それ以外の理由で解除することは基本的にないので、再申請大歓迎です。
         </p>
-        <h4>交流スタイル</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>交流スタイル</h4>
         <p>
           ゲーム内でチャットへの返信は原則しません。<br>
           配信者とリスナーの個人的な交流はトラブルの元になるためです。
         </p>
-        <h4>ゲーム内でのプレゼント・ギフトなど</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>ゲーム内でのプレゼント・ギフトなど</h4>
         <p>
           とんの偽アカウントに注意してください。<br>
           ゲーム内のプロフィールや掲示板などを見て、とん本人であることを確信してから贈ってください。<br>
@@ -1075,12 +1093,14 @@
         <hr>
 
         <h2 id="chapter6">コラボについて</h2>
-        <h4>原則</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>原則</h4>
         <p>
           とんは会話が苦手なので、基本的にコラボはしません。<br>
           「どうしてもやりたい！」と心が動いた場合にはお願いすることもあります。
         </p>
-        <h4>お断りするコラボ</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>お断りするコラボ</h4>
         <ul class="custom-list">
           <li>お互いどちらかのリスナーが楽しめない内容</li>
           <li>方向性が異なる内容</li>
@@ -1090,7 +1110,8 @@
         <hr>
 
         <h2 id="chapter7">プレゼントの送付先・問い合わせ先について</h2>
-        <h4>プレゼント・ファンレターの送付先</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>プレゼント・ファンレターの送付先</h4>
         <p>
           〒150-0002
           東京都渋谷区渋谷2-22-3渋谷東口ビル10階<br>
@@ -1098,12 +1119,14 @@
           ※下記の注意事項を必ずご確認の上発送お願いいたします。<br>
           <a href="https://bit.ly/2TEtshb" class="external-link" target="_blank" >https://bit.ly/2TEtshb</a>
         </p>
-        <h4>お返事</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>お返事</h4>
         <p>
           こちらからお返事を送ることはできません。<br>
           代わりにYouTubeコミュニティで一部取り上げて、一言のみの簡単なお返事を書かせていただくことがあります。
         </p>
-        <h4>お仕事のご依頼</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>お仕事のご依頼</h4>
         <p>
           production.contact@bitstar.tokyo<br>
           問い合わせルール：<a href="https://bit.ly/2GZo5Xh" class="external-link" target="_blank">https://bit.ly/2GZo5Xh</a><br><br>
@@ -1127,49 +1150,64 @@
       <div class="tab-content">
         <h2>ライブ配信コメントルール</h2>
         <h3>ライブ配信の楽しみ方</h3>
-        <h4>誰でも大歓迎！</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>誰でも大歓迎！</h4>
         <p>初見さんも常連さんも久しぶりの方も、気軽に遊びにきてください✨</p>
-        <h4>コメントもお気軽に！</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>コメントもお気軽に！</h4>
         <p>あいさつだけでも一言だけでも、コメントいただけるととても嬉しいです✨
         コメントせずに見ているだけでもOKです！<br>
         配信終了後にすべて読み返しています。</p>
-        <h4>見守ってね</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>見守ってね</h4>
         <p>ほとんどの配信は参加型ではなく、私が何かしているのを見てもらう形の配信です。温かい目で見守っていただけると嬉しいです🙇‍♀️</p>
-        <h4>スーパーチャットについて</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>スーパーチャットについて</h4>
         <p>スーパーチャット（スパチャ）は基本的に必ず読み上げます。<br>
         スパチャできない！という方も、いつも通りの応援の仕方で十分嬉しいので気にしなくて大丈夫です🙆‍♀️<br><br></p>
 
         <h3>ライブ配信でダメなこと</h3>
-        <h4>相手への思いやりのない発言</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>相手への思いやりのない発言</h4>
         <p>とんや他のリスナーがいやな気持ちになる発言はしないでください。<br>
         正義を盾にした攻撃的な発言も禁止です（「アンチはだまれ！」など）。</p>
-        <h4>連投</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>連投</h4>
         <p>同じコメントを何度も送らないでください。<br>
         同じ言葉や絵文字をたくさん並べたコメントも禁止です。</p>
-        <h4>リスナー同士の会話</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>リスナー同士の会話</h4>
         <p>他のリスナーへの名前呼びや会話はしないでください。<br>
         けんかやトラブルの元になってしまいます。</p>
-        <h4>自分語り</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>自分語り</h4>
         <p>配信の流れを損なう発言や自分語りはやめてください。</p>
-        <h4>指示・要求・催促</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>指示・要求・催促</h4>
         <p>「○○して！」「コメント読んで！」「その話やめて！」などの指示や要求には応えられません。ごめんなさい。</p>
-        <h4>ネタバレ・匂わせ</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>ネタバレ・匂わせ</h4>
         <p>そのとき配信中の場面でとんが知り得ない情報は教えないでください。<br>
         「この後のシーンやばいよ！」などの匂わせもNGです。</p>
-        <h4>過度な質問攻め</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>過度な質問攻め</h4>
         <p>配信の流れを遮さえぎるほどの質問の連投はしないでください。<br>
         個人情報など、答えられない質問もあります。</p>
-        <h4>過度な<ruby>崇拝<rp>（</rp><rt>すうはい</rt><rp>）</rp></ruby></h4>
+        <h4 class="heading4">
+          <span class="dot"></span>過度な<ruby>崇拝<rp>（</rp><rt>すうはい</rt><rp>）</rp></ruby></h4>
         <p>初見さんが困惑してしまうため、とんを過度に<ruby>崇<rp>（</rp><rt>あが</rt><rp>）</rp></ruby>めるコメントは控えてください。<br>
         他の人を下げてとんを褒めるのも、反応に困るのでやめてください。</p>
-        <h4>自治行為</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>自治行為</h4>
         <p>ルールを守れていないコメントがあっても、注意はしないでください。
         空気が悪くなり、他の人がコメントしづらくなってしまいます。<br>
         けんかになった場合、どちらもブロックします。<br>
         定期コメント等も禁止です。</p>
-        <h4>宣伝行為</h4>
+        <h4 class="heading4">
+          <span class="dot"></span>宣伝行為</h4>
         <p>活動者様の宣伝行為は禁止です。</p>
-        <h4><ruby>鳩<rp>（</rp><rt>はと</rt><rp>）</rp></ruby>行為</h4>
+        <h4 class="heading4">
+          <span class="dot"></span><ruby>鳩<rp>（</rp><rt>はと</rt><rp>）</rp></ruby>行為</h4>
         <p>他の配信への誘導はしないでください。<br>
         話題に出していないときに、他の活動者様の名前を出さないでください。
         相手の方にもご迷惑がかかってしまいます。<br>
@@ -1201,6 +1239,21 @@
     window.onload = function() {
       imageMapResize();
     };
+
+    // ルビのついたh4だけ文字位置調整
+    document.querySelectorAll('h4').forEach(h => {
+      if (h.querySelector('ruby')) {
+        const dot = document.createElement('span');
+        dot.className = 'dot';
+        const wrapper = document.createElement('span');
+        wrapper.className = 'heading4-text';
+        wrapper.innerHTML = h.innerHTML;
+        h.innerHTML = '';
+        h.classList.add('heading4');
+        h.appendChild(dot);
+        h.appendChild(wrapper);
+      }
+    });
 
     // 👆トップへ戻るボタン
     const toTopBtn = document.getElementById('toTopBtn');

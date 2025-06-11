@@ -26,7 +26,7 @@
       margin: 0;
       padding: 0;
       font-size: 16px;
-      font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "筑紫ゴシック Pr5 M", sans-serif;
+      font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", -apple-system, BlinkMacSystemFont, sans-serif;
       text-align: start;
       line-height: 1.7;
     }
@@ -197,6 +197,7 @@
     /* トップに戻る */
     #toTopBtn {
       position: fixed;
+      cursor: pointer;
       width: 44px;
       height: 44px;
       right: 24px;
@@ -204,38 +205,24 @@
       background: #c2d45f;
       border-radius: 50%;
       opacity: 0; /* 最初は見えないようにする */
+      border: none; /* デフォルトの枠線を消す */
       pointer-events: none; /* 見えないときは押せないようにする */
       transition: opacity 0.3s ease, transform 0.2s ease;
       z-index: 1000; /* 他の要素に埋もれないように */
+    }
+    #toTopBtn:focus {
+      outline: none;
+      box-shadow: none;
     }
     #toTopBtn.visible {
       opacity: 0.8; /* 少しだけ透けて見える */
       pointer-events: auto; /* 押せるようになる */
     }
-    #toTopBtn a{
-      position: relative;
-      display: block;
-      width: 40px;
-      height: 25px;
-      text-decoration: none;
-    }
-    #toTopBtn a::before{
-      font-family: 'Font Awesome 5 Free';
+    #toTopBtn i{
       font-weight: 900;
-      content: '\f062';
       font-size: 24px;
       color: #fff;
-      position: absolute;
-      width: 44px;
-      height: 24px;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      margin: auto;
-      text-align: center;
     }
-
     #toTopBtn:hover{
       opacity: 1;
       transform:  scale(1.1);
@@ -1203,7 +1190,9 @@
   </div>
   </div>
   <!-- トップに戻る -->
-  <div id="toTopBtn"><a href="#top" aria-label="ページの先頭へ戻る"></a></div>
+  <button id="toTopBtn" aria-label="トップへ戻る">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 
 <!--JavaScript-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
@@ -1217,6 +1206,13 @@
     const toTopBtn = document.getElementById('toTopBtn');
     let scrollTimeout; // スクロール停止後に表示するためのタイマー
     let hideTimeout;   // スクロール開始2秒後に非表示にするためのタイマー
+
+    toTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
 
     window.addEventListener('scroll', () => {
     const isAtTop = window.scrollY === 0;

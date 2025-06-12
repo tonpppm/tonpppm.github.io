@@ -229,6 +229,7 @@
       color: #fff;
     }
     #toTopBtn:active {
+      background: red !important;
       transform: scale(1.1);
     }
 
@@ -1261,7 +1262,7 @@
     window.onload = function() {
       imageMapResize();
     };
-    
+
     // ルビのついたh4だけ文字位置調整
     document.querySelectorAll('h4').forEach(h => {
       if (h.querySelector('ruby')) {

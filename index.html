@@ -220,16 +220,19 @@
       opacity: 0; /* 最初は見えないようにする */
       border: none; /* デフォルトの枠線を消す */
       pointer-events: none; /* 見えないときは押せないようにする */
-      transition: opacity 0.3s ease, transform 0.2s ease;
-      z-index: 1000; /* 他の要素に埋もれないように */
+      z-index: 9999; /* 他の要素に埋もれないように */
     }
     #toTopBtn:focus {
       outline: none;
       box-shadow: none;
     }
     #toTopBtn.visible {
-      opacity: 0.8; /* 少しだけ透けて見える */
+      opacity: 1; /* 少しだけ透けて見える */
       pointer-events: auto; /* 押せるようになる */
+      transition: opacity 0.3s ease, transform 0.2s ease;
+    }
+    #toTopBtn:not(.visible) {
+      pointer-events: none;
     }
     #toTopBtn i{
       font-weight: 900;
@@ -747,7 +750,6 @@
       }
 
       #toTopBtn:hover {
-        opacity: 1;
         transform: scale(1.1);
       }
 

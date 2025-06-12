@@ -116,8 +116,8 @@
       pointer-events: none; /* ロゴはホバーの邪魔をしない */
     }
 
-    .header-link-button:hover {
-      transform: scale(1.05);
+    .header-link-button:active {
+      transform: scale(0.97);
     }
 
     /* タブや本文全体 */
@@ -732,6 +732,10 @@
     }
 
     @media (hover: hover) {
+      .header-link-button:hover {
+        transform: scale(1.05);
+      }
+      
       #toTopBtn:hover {
         opacity: 1;
         transform: scale(1.1);

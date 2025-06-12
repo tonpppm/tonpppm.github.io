@@ -215,12 +215,13 @@
       height: 44px;
       right: 24px;
       bottom: 45px;
-      background: #c2d45f;
+      background: #bed85f;
+      color: #fff;
       border-radius: 50%;
       opacity: 0; /* 最初は見えないようにする */
       border: none; /* デフォルトの枠線を消す */
       pointer-events: none; /* 見えないときは押せないようにする */
-      transition: opacity 0.2s ease, transform 0.2s ease;
+      transition: opacity 0.2s ease;
       z-index: 9999; /* 他の要素に埋もれないように */
     }
     #toTopBtn:focus {
@@ -241,6 +242,7 @@
     }
     #toTopBtn.active-touch {
       transform: scale(1.1);
+      transition: transform 0.2s ease;
     }
 
 
@@ -1289,43 +1291,9 @@
 
     // 👆トップへ戻るボタン
     const toTopBtn = document.getElementById('toTopBtn');
-    let scrollTimeout; // スクロール停止後に表示するためのタイマー
-    let hideTimeout;   // スクロール開始2秒後に非表示にするためのタイマー
 
     toTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-
-    window.addEventListener('scroll', () => {
-    const isAtTop = window.scrollY === 0;
-
-    // 上にいるときは常に非表示
-    if (isAtTop) {
-      toTopBtn.classList.remove('visible');
-      clearTimeout(scrollTimeout);
-      clearTimeout(hideTimeout);
-      hideTimeout = null;
-      return;
-    }
-
-      // スクロールが続いたら0.2秒後に非表示
-      if (!hideTimeout) {
-        hideTimeout = setTimeout(() => {
-          toTopBtn.classList.remove('visible');
-          hideTimeout = null;
-        }, 200);
-      }
-
-      // スクロールが止まったら1秒後に再表示
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        toTopBtn.classList.add('visible');
-        clearTimeout(hideTimeout);
-        hideTimeout = null;
-      }, 800);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
     toTopBtn.addEventListener('touchstart', () => {
@@ -1334,6 +1302,14 @@
 
     toTopBtn.addEventListener('touchend', () => {
       toTopBtn.classList.remove('active-touch');
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        toTopBtn.classList.add('visible');
+      } else {
+        toTopBtn.classList.remove('visible');
+      }
     });
 
   </script>

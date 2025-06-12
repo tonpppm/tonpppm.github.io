@@ -212,7 +212,6 @@
       opacity: 0; /* 最初は見えないようにする */
       border: none; /* デフォルトの枠線を消す */
       pointer-events: none; /* 見えないときは押せないようにする */
-      touch-action: manipulation;
       transition: opacity 0.3s ease, transform 0.2s ease;
       z-index: 1000; /* 他の要素に埋もれないように */
     }
@@ -1317,6 +1316,14 @@
         clearTimeout(hideTimeout);
         hideTimeout = null;
       }, 800);
+    });
+
+    toTopBtn.addEventListener('touchstart', () => {
+      toTopBtn.classList.add('active-touch');
+    });
+
+    toTopBtn.addEventListener('touchend', () => {
+      toTopBtn.classList.remove('active-touch');
     });
 
   </script>

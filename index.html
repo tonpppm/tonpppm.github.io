@@ -225,7 +225,7 @@
       font-size: 24px;
       color: #fff;
     }
-    #toTopBtn:hover{
+    #toTopBtn:active {
       opacity: 1;
       transform:  scale(1.1);
     }
@@ -565,8 +565,8 @@
       font-size: 0.8em;
     }
 
-    .link-button:hover {
-      transform: scale(1.03);
+    .link-button:active {
+      transform: scale(0.97);
     }
 
     /* 🐦フッターSNSリンクボタン */
@@ -586,9 +586,9 @@
       font-size: 2.3em;
       transition: color 0.2s ease, transform 0.2s ease;
     }
-    .footer-link-button:hover {
+    .footer-link-button:active {
       color: #666; /* ホバーで少しグレーに */
-      transform: scale(1.1);
+      transform: scale(0.9);
     }
 
 
@@ -728,6 +728,22 @@
         max-width: 800px;
         margin: 0 auto;
         padding: 1em;
+      }
+    }
+
+    @media (hover: hover) {
+      #toTopBtn:hover {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+
+      .link-button:hover {
+        transform: scale(1.03);
+      }
+
+      .footer-link-button:hover {
+        color: #666; /* ホバーで少しグレーに */
+        transform: scale(1.1);
       }
     }
 

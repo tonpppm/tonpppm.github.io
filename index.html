@@ -218,9 +218,9 @@
       background: #bed85f;
       color: #fff;
       border-radius: 50%;
-      opacity: 0; /* 最初は見えないようにする */
+      opacity: 1 !important; /* 最初は見えないようにする */
       border: none; /* デフォルトの枠線を消す */
-      pointer-events: none; /* 見えないときは押せないようにする */
+      pointer-events: auto !important; /* 見えないときは押せないようにする */
       transition: opacity 0.2s ease;
       z-index: 9999; /* 他の要素に埋もれないように */
     }

@@ -522,6 +522,8 @@
 
     /* 📷アイコン画像 */
     .icon-img img {
+      position: relative;
+      display: inline-block;
       width: 130px;
       height: 130px;
       max-width: 100%;
@@ -532,15 +534,32 @@
 
     /* 📷Live2D画像 */
     .live2d-img {
-      text-align: center;  /* 親に指定する */
+      position: relative;
+      width: 100%;
+      max-width: 650px;
       margin: 1em 0 4em 0;
     }
     .live2d-img img {
       width: 100%;
-      max-width: 650px;
       height: auto;
       display: block;
       margin: 0 auto; /* ブロック要素を中央寄せ */
+    }
+    .secret-link {
+      position: absolute;
+      top: 70%;
+      left: 27.9%;
+      width: 15.1%;
+      height: 18.2%;
+      border-radius: 50%;
+      cursor: pointer;
+      background: transparent;
+      transition: background 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .secret-link:active {
+      background: rgba(255, 182, 193, 0.4); /* ほんのりピンクで反応を出す */
+      box-shadow: 0 0 1px rgba(255, 182, 193);
     }
 
 
@@ -915,10 +934,8 @@
 
       <h3>Live2D二面図</h3>
       <div class="live2d-img">
-        <img src="images/live2d-img.png" usemap="#ImageMap" alt="とんのLive2D二面図（どこかをタップすると、いいことがあるかも？）">
-        <map name="ImageMap">
-          <area shape="circle" coords="1212,1830,215" href="https://tonpppm.github.io/secret" alt="じ～……">
-        </map>
+        <img src="images/live2d-img.png" alt="とんのLive2D二面図">
+        <a href="https://tonpppm.github.io/secret" class="secret-link" aria-label="じ～……"></a>
       </div>
 
       <h3>タグ</h3>

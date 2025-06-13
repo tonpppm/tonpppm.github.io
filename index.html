@@ -33,26 +33,16 @@
     }
 
     body {
+      display: flex;
+      flex-direction: column;
       max-width: 100%; /* 横幅を端に合わせる */
       margin: 0;
       padding: 0;
+      background-color: #fff5f6;
       font-size: 16px;
       font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", -apple-system, BlinkMacSystemFont, sans-serif;
       text-align: start;
       line-height: 1.8;
-    }
-
-    /* 背景のストライプ模様 */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      background-color: #fff5f6;
-      background-repeat: repeat;
     }
 
     .site-header-bg {
@@ -148,12 +138,17 @@
       transform: scale(0.97);
     }
 
+    main {
+      flex: 1;
+    }
+
     /* タブや本文全体 */
       .wrapper {
         max-width: 100%;
         min-height: 100%;
         display: flex;
         flex-direction: column;
+        flex: 1;
         padding: 2em;
         background: #fff; /* 白背景 */
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* ふんわり影を追加 */
@@ -830,6 +825,7 @@
   </div>
 </header>
 
+<main>
   <div class="wrapper">
 
   <!-- とんのアイコン -->
@@ -1296,6 +1292,7 @@
   <button id="toTopBtn" aria-label="トップへ戻る">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
+</main>
 
 <!--JavaScript-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>

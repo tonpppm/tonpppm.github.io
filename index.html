@@ -475,7 +475,35 @@
     }
 
 
-    /* 🌐外部リンク */
+    /* 🌐外部リンク（プロフィール） */
+    .bitstar-link {
+      display: inline-block; /* これがないとリンク範囲が全幅になる */
+      position: relative; /* 相対位置指定 */
+      text-decoration: none;
+      color:#333; /* 黒い文字 */
+      transition: all 0.2s; /* ホバー時の滑らかな変化 */
+    }
+    .bitstar-link::after {
+      width: 100%; /* 要素の幅 */
+      position: absolute; /* 絶対位置指定 */
+      content: "";
+      background-color: #333;
+      bottom: 0.4em; /* 要素の下端からの距離 */
+      height: 1px; /* 下線の高さ */
+      left: 0;
+      opacity: 1;
+      transition: color 0.2s, opacity 0.15s;
+    }
+    .bitstar-link:hover {
+      color: #aaa; /* リンク選択時の文字色をグレーに */
+    }
+    .bitstar-link:hover::after {
+      color: #aaa;
+      opacity: 0;
+    }
+
+
+    /* 🌐外部リンク（ガイドライン） */
     .external-link {
       color:#f28da6; /* リンクの文字を濃いピンクに */
       transition: color 0.2s; /* ホバー時の滑らかな変化 */
@@ -484,16 +512,7 @@
       color: #c2d45f; /* リンク選択時の文字色をピンクに */
     }
 
-    .bitstar-link {
-      text-decoration: none; /* 下線なし */
-      color:#333; /* 黒い文字 */
-      transition: all 0.2s; /* ホバー時の滑らかな変化 */
-    }
-    .bitstar-link:hover {
-      color: #aaa; /* リンク選択時の文字色をグレーに */
-    }
-
-
+    
     /* 🎦YouTube動画埋め込み */
     .video-wrapper {
       max-width: 600px;

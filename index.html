@@ -491,25 +491,47 @@
       bottom: 0.4em; /* 要素の下端からの距離 */
       height: 1px; /* 下線の高さ */
       left: 0;
-      opacity: 1;
-      transition: color 0.2s, opacity 0.15s;
+      transform-origin: left top; /* 変形の原点を中央上に指定 */
+      transform: opacity(1, 1); /* 下線を横方向に1倍、縦方向に1倍に変形（表示） */
+      transition: background-color 0.2s, transform 0.2s;
     }
     .bitstar-link:hover {
       color: #aaa; /* リンク選択時の文字色をグレーに */
     }
     .bitstar-link:hover::after {
-      color: #aaa;
-      opacity: 0;
+      background-color: #aaa;
+      transform-origin: right top;
+      transform: scale(0, 1); /* 下線を横方向に0倍、縦方向に1倍に変形（非表示） */
     }
 
 
     /* 🌐外部リンク（ガイドライン） */
     .external-link {
-      color:#f28da6; /* リンクの文字を濃いピンクに */
-      transition: color 0.2s; /* ホバー時の滑らかな変化 */
+      display: inline-block;
+      position: relative;
+      text-decoration: none;
+      color: #f28da6; /* リンクの文字を濃いピンクに */
+      transition: all 0.2s; /* ホバー時の滑らかな変化 */
+    }
+    .external-link::after {
+      width: 100%;
+      position: absolute;
+      content: "";
+      background-color: #f28da6;
+      bottom: 0.4em; /* 要素の下端からの距離 */
+      height: 1px; /* 下線の高さ */
+      left: 0;
+      transform-origin: left top; /* 変形の原点を中央上に指定 */
+      transform: opacity(1, 1); /* 下線を横方向に1倍、縦方向に1倍に変形（表示） */
+      transition: background-color 0.2s, transform 0.2s;
     }
     .external-link:hover {
       color: #c2d45f; /* リンク選択時の文字色をピンクに */
+    }
+    .external-link:hover::after {
+      background-color: #c2d45f;
+      transform-origin: right top;
+      transform: scale(0, 1); /* 下線を横方向に0倍、縦方向に1倍に変形（非表示） */
     }
 
     

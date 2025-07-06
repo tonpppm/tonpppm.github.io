@@ -57,13 +57,14 @@
       left: 0;
       width: 100%;
       height: 40px; /* もこもこの高さ */
-      background: 
+      background:
         /* 小さな半円を繰り返す */
-        radial-gradient(circle at 50% 0%, #fee1e6 50%, transparent 51%) 
+        radial-gradient(circle at 50% 0%, #fee1e6 50%, transparent 51%)
         center top / 50px 50px repeat-x; /* 50pxごとに半円 */
       z-index: 1; /* 背景より手前、コンテンツより奥 */
     }
 
+    /* 🎀ヘッダー */
     .site-header {
       position: relative; /* moco-rowより手前 */
       display: flex;
@@ -155,7 +156,7 @@
       }
 
 
-    /* フッター */
+    /* 🎀フッター */
     .site-footer-bg {
       position: relative;
       background-color: #fee1e6;
@@ -168,8 +169,8 @@
       left: 0;
       width: 100%;
       height: 40px;
-      background: 
-        radial-gradient(circle at 50% 100%, #fee1e6 50%, transparent 51%) 
+      background:
+        radial-gradient(circle at 50% 100%, #fee1e6 50%, transparent 51%)
         center bottom / 50px 50px repeat-x;
       z-index: 1;
     }
@@ -196,7 +197,7 @@
     }
     h3 {
       color: #333; /* 黒文字 */
-      background: #f4f4f4; /* 見出しの背景を極薄ピンクに */
+      background: #f4f4f4; /* 見出しの背景をライトグレーに */
       font-size: 1.4em;
       margin: 1em 0 0.8em 0;
       padding: 0.4em 0.8em;
@@ -222,6 +223,11 @@
     .heading4 ruby {
       line-height: 1.3; /* ルビ付きでも高さ整える */
     }
+    h5 {
+      color: #333;
+      font-size: 1.1em;
+      text-align: center;
+    }
 
     p {
       margin-bottom: 1.2em;  /* 段落の下に余白 */
@@ -230,7 +236,7 @@
     /* 区切り線 */
     hr {
       border: none;
-      border-bottom: dotted 8px #d3d3d3; /* ライトグレーの点線に */
+      border-bottom: 8px dotted #d3d3d3; /* ライトグレーの点線に */
       width: 105px;
       margin: 4em 0 1em 0;
     }
@@ -276,14 +282,14 @@
     .profile-table {
       width: 100%;
       border-collapse: collapse;
-      border-bottom: solid 2px #ccc;
+      border-bottom: 2px solid #ccc;
       font-size: 1em;
       margin-bottom: 4em;
     }
 
     /* 横線のみ表示（行の間にボーダー） */
     .profile-table tr {
-      border-bottom: dotted 1.5px #ccc;
+      border-bottom: 1.5px dotted #ccc;
     }
 
     /* 項目の左側（●付き部分） */
@@ -324,22 +330,22 @@
     .illust-table th {
       padding: 0.2em 0.6em;
       background: #f1f1f1; /* 表の見出し背景を薄い黄緑に */
-      border: solid 1px #ccc; /* 表の見出し区切り線（縦線） */
-      border-bottom: solid 2px #aaa; /* 表の見出し下線（横線） */
+      border: 1px solid #ccc; /* 表の見出し区切り線（縦線） */
+      border-bottom: 2px solid #aaa; /* 表の見出し下線（横線） */
       text-align: center;
     }
     .illust-table th:first-child {
-      border-right: solid 2px #ccc;
+      border-right: 2px solid #ccc;
     }
 
     /* 表の中身設定 */
     .illust-table td {
       padding: 0.3em 0.6em;
-      border: dotted 1px #d5d5d5; /* 表の中の線を点線に（横線） */
-      border-left: solid 1px #ccc; /* 表の中の線を実線に（縦線） */
+      border: 1px dotted #d5d5d5; /* 表の中の線を点線に（横線） */
+      border-left: 1px solid #ccc; /* 表の中の線を実線に（縦線） */
     }
     .illust-table td:first-child {
-      border-right: solid 2px #ccc;
+      border-right: 2px solid #ccc;
     }
     .illust-table td:nth-child(n+2) {
       text-align: center;
@@ -398,7 +404,7 @@
       padding: 0.8em 1em;
       display: block;
       position: relative;
-      border: solid 3px #bbb; /* 外枠をグレーの太線に */
+      border: 3px solid #bbb; /* 外枠をグレーの太線に */
       background: #fff; /* 背景を白に */
       border-radius: 20px;
     }
@@ -409,7 +415,7 @@
       display: block;
       margin: 0 0 0.8em;
       padding: 0 0.5em;
-      border-bottom: dotted 2px #d3d3d3; /* 下に薄い点線 */
+      border-bottom: 2px dotted #d3d3d3; /* 下に薄い点線 */
       font-size: 1.4em;
       font-weight: bold;
     }
@@ -534,7 +540,7 @@
       transform: scale(0, 1); /* 下線を横方向に0倍、縦方向に1倍に変形（非表示） */
     }
 
-    
+
     /* 🎦YouTube動画埋め込み */
     .video-wrapper {
       max-width: 600px;
@@ -562,6 +568,9 @@
 
 
     /* 📷アイコン画像 */
+    .icon-img {
+      margin-top: 2em;
+    }
     .icon-img img {
       position: relative;
       display: inline-block;
@@ -604,6 +613,56 @@
     }
 
 
+    /* 🎲ことばガチャ */
+    .gacha-box {
+      width: 100%;
+      max-width: 480px;
+      margin: 3em auto;
+      padding: 1.5em 1.2em 2em;
+      color: #333;
+      background: #fff0f2; /* 背景極薄ピンク */
+      border-radius: 24px;
+      text-align: center;
+    }
+    .gacha-left-icon {
+      color: #a5614a; /* 見出しのアイコン茶色 */
+      font-size: 1.2em;
+    }
+
+    .gacha-button {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      max-width: 250px;
+      gap: 0.5em;
+      margin: 1em auto 0;
+      padding: 10px 32px 8px;
+      color: #fff;
+      font-weight: bold;
+      background: #fea9ba; /* ボタンピンク */
+      border-radius: 999px;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: all 0.2s ease;
+    }
+    .gacha-right-icon {
+      margin-left: auto; /* ↗右寄せ */
+      font-size: 1.2em;
+      transition: all 0.2s ease;
+    }
+
+    .gacha-button:hover {
+      background: #ff9eb1; /* ボタンちょっと濃くする */
+      transform: scale(1.05);
+    }
+    .gacha-button:active {
+      background: #ff9eb1; /* ボタンちょっと濃くする */
+      transform: scale(0.95);
+    }
+
+
+
     /* 🐦SNSリンクボタン */
     .link-buttons {
       display: flex;
@@ -619,7 +678,7 @@
       align-items: center;
       color: #333;
       padding: 0.45em;
-      border: solid 2px #ddd;
+      border: 2px solid #ddd;
       border-radius: 50px;
       text-decoration: none;
       transition: transform 0.2s ease;
@@ -694,7 +753,7 @@
 
 
     /* 💬タブ全体を囲むコンテナの設定 */
-    .tab-wrap {        
+    .tab-wrap {
       display: flex;
       justify-content: center; /* 中央揃え！ */
       flex-wrap: wrap;
@@ -713,18 +772,17 @@
       letter-spacing: -0.03em; /* 文字の間隔を少し狭く */
       text-align: center;
       padding: 10px 0.8em;
-      border: 2px solid; /* タブの枠線 */
-      border-color: #ffadba; /* タブの枠線の色 */
-      border-radius: 30px; /* タブを丸く */
+      border: 2px solid #fea9ba; /* タブの枠線ピンク */
+      border-radius: 99px; /* タブを丸く */
       background: white; /* 背景白 */
       cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-      box-shadow: 2px 2.5px 0 #ffadba; /* 🎯立体感のある影 */
+      transition: box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+      box-shadow: 2px 2.5px 0 #fea9ba; /* 立体感のある影 */
       user-select: none;
       white-space: nowrap;
       order: -1;
       flex: 1 1 100px; /* flex-grow: 1（同じ幅で育つ） flex-shrink: 1（必要なら縮む） flex-basis: 100px（理想サイズ） */
-      max-width: 200px; /* ③それ以上広がらない */
+      max-width: 200px; /* それ以上広がらない */
     }
 
     /* タブラベルの三角初期状態（非表示） */
@@ -740,7 +798,7 @@
       border-right: 9px solid transparent;
       border-top: 9px solid #ffadba;
       opacity: 0;
-      transition: opacity 0.2s ease, transform 0.2s ease;
+      transition: opacity 0.2s ease;
       pointer-events: none;
     }
 
@@ -748,61 +806,47 @@
     .tab-label:hover {
       background: #fee1e6;
       transform: translate(2px, 2.5px);
-      box-shadow: 0 0 0 #ffadba;
+      box-shadow: none;
       border-color: #fee1e6;
     }
 
-    /* 本文全体の動き */
+    /* 本文全体（非表示） */
     .tab-content {
       height: 0;
       opacity: 0;
       pointer-events: none;
-      transform: translateX(0); /* ←初期位置は変えず、出現時だけアニメ */
-      transition: transform 0.3s 80ms, opacity 0.3s 80ms;
+      transition: opacity 0.3s 80ms;
       width: 100%;
       padding: 0 0.2em;
       overflow: hidden; /* 余分に出るのを防ぐ！ */
     }
 
     /* アクティブなタブ */
-    .tab-switch:checked + .tab-label {      
-      background: #ffadba;
+    .tab-switch:checked + .tab-label {
+      background: #fea9ba;
       color: #fff;
       transform: translate(2px, 2.5px);
-      border-color: #ffadba;
-      box-shadow: 0 0 0 #ffadba;
+      border-color: #fea9ba;
+      box-shadow: none;
     }
 
     /* 選択中の三角 */
     .tab-switch:checked + .tab-label::after {
-      content: "";
-      position: absolute;
-      bottom: -9px;
-      left: 50%;
-      transform: translateX(-50%) 
-      width: 0;
-      height: 0;
-      border-left: 9px solid transparent;
-      border-right: 9px solid transparent;
-      border-top: 9px solid #ffadba;
       opacity: 1;
+      border-top-color: #fea9ba;
     }
 
     .tab-switch:checked + .tab-label + .tab-content {
       height: auto;
       opacity: 1;
       pointer-events:auto;
-      transform: translateX(0);
     }
-
-     .tab-switch:checked ~ .tab-content {
-      transform: none
-    }   
 
     /* ラジオボタン自体は非表示 */
     .tab-switch {
       display: none;
     }
+
 
     /* 💻800px以上のモニターでは横幅固定 */
     @media screen and (min-width: 800px) {
@@ -813,6 +857,11 @@
       #toTopBtn {
         opacity: 0.8 !important; /* 常に見えるように */
         pointer-events: auto !important; /* 押せるように */
+        width: 52px;
+        height: 52px;
+      }
+      #toTopBtn i {
+        font-size: 28px;
       }
       .footer-link .footer-link-button {
         font-size: 1.8em;
@@ -855,26 +904,35 @@
 </head>
 
 <body>
+<!-- ヘッダー -->
 <header class="site-header-bg">
   <div class="moco-row"></div>
   <div class="site-header">
+
+    <!-- とんのサイン画像 -->
     <div class="header-img">
-      <img src="images/ton-autograph.png" alt="とんの顔">
+      <img src="images/ton-autograph.png" alt="とんのサイン">
     </div>
+
     <!-- ヘッダーSNSアイコン -->
     <div class="header-link">
+      <!-- YouTube -->
       <a href="https://www.youtube.com/@ton_pppm" class="header-link-button" target="_blank">
         <div class="header-link-button">
           <img src="images/mocobtn-wht.png" alt="YouTube">
           <i class="fa-brands fa-youtube"></i>
         </div>
-      </a>  
+      </a>
+
+      <!-- X（Twitter） -->
       <a href="https://x.com/ton_pppm427" class="header-link-button" target="_blank">
         <div class="header-link-button">
           <img src="images/mocobtn-wht.png" alt="X">
           <i class="fa-brands fa-x-twitter"></i>
         </div>
       </a>
+
+      <!-- Instagram -->
       <a href="https://www.instagram.com/ton.pppm__acnh/" class="header-link-button" target="_blank">
         <div class="header-link-button">
           <img src="images/mocobtn-wht.png" alt="Instagram">
@@ -882,14 +940,15 @@
         </div>
       </a>
     </div>
+
   </div>
 </header>
 
+<!-- 本文 -->
 <main>
   <div class="wrapper">
 
   <!-- とんのアイコン -->
-  <br>
   <div class="icon-img">
     <img src="images/channel-icon.png" alt="とんのアイコン">
   </div>
@@ -913,6 +972,7 @@
       <h3>SNSリンク</h3>
       <div class="link-buttons">
 
+        <!-- YouTube -->
         <a href="https://www.youtube.com/@ton_pppm" class="link-button" target="_blank">
           <div class="icon-wrapper">
             <i class="fa-brands fa-youtube"></i>
@@ -923,6 +983,7 @@
           </div>
         </a>
 
+        <!-- X（本垢） -->
         <a href="https://x.com/ton_pppm427" class="link-button" target="_blank">
           <div class="icon-wrapper">
             <i class="fa-brands fa-x-twitter"></i>
@@ -933,6 +994,7 @@
           </div>
         </a>
 
+        <!-- X（サブ垢） -->
         <a href="https://x.com/tonchi_sub" class="link-button" target="_blank">
           <div class="icon-wrapper">
             <i class="fa-brands fa-x-twitter"></i>
@@ -943,6 +1005,7 @@
           </div>
         </a>
 
+        <!-- Instagram -->
         <a href="https://www.instagram.com/ton.pppm__acnh/" class="link-button" target="_blank">
           <div class="icon-wrapper">
             <i class="fa-brands fa-instagram icon"></i>
@@ -1021,6 +1084,16 @@
             allowfullscreen>
           </iframe>
         </div>
+      </div>
+
+      <div class="gacha-box">
+        <h5>
+          ＼ <i class="fa-solid fa-dice gacha-left-icon"></i> ちょこっと遊び部屋 ／
+        </h5>
+        <a href="https://tonpppm.github.io/kotoba-gacha" class="gacha-button" target="_blank">
+          ことばガチャで遊ぶ
+          <i class="fa-solid fa-arrow-up-right-from-square gacha-right-icon"></i>
+        </a>
       </div>
 
     </div>
@@ -1435,9 +1508,15 @@
   <div class="site-footer">
     <!-- アイコンリンク -->
     <div class="footer-link">
-      <a href="https://www.youtube.com/@ton_pppm" class="footer-link-button" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-      <a href="https://x.com/ton_pppm427" class="footer-link-button" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-      <a href="https://www.instagram.com/ton.pppm__acnh/" class="footer-link-button" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@ton_pppm" class="footer-link-button" target="_blank">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+      <a href="https://x.com/ton_pppm427" class="footer-link-button" target="_blank">
+        <i class="fa-brands fa-x-twitter"></i>
+      </a>
+      <a href="https://www.instagram.com/ton.pppm__acnh/" class="footer-link-button" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
     </div>
     <small>&copy; 2025 とん All rights reserved.</small>
   </div>

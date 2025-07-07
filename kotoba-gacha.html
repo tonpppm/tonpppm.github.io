@@ -270,6 +270,45 @@
     }
 
 
+    /* 🌐トップページリンク */
+    .site-link-container {
+      margin-left: 1em;
+      margin-right: 1em;
+      margin-top: auto; /* これがポイント！ */
+      text-align: center;
+    }
+
+    .site-link {
+      display: inline-block;
+      position: relative;
+      font-size: 1.1em;
+      font-weight: bold;
+      text-decoration: none;
+      color: #9d563f; /* リンクの文字を茶色に */
+      transition: all 0.2s;
+    }
+    .site-link::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      background-color: #9d563f;
+      bottom: 0.2em; /* 要素の下端からの距離 */
+      height: 1px; /* 下線の高さ */
+      left: 0;
+      transform-origin: left top; /* 変形の原点を左に指定 */
+      transform: scale(1, 1); /* 下線を横方向に1倍、縦方向に1倍に変形（表示） */
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .site-link:hover {
+      opacity: 0.75;
+    }
+    .site-link:hover::after {
+      opacity: 0.75;
+      transform-origin: right top;
+      transform: scale(0, 1); /* 下線を横方向に0倍、縦方向に1倍に変形（非表示） */
+    }
+
+
     /* 🎀フッター */
     .site-footer-bg {
       position: relative;
@@ -372,6 +411,13 @@
       }
     }
 
+    @media (hover: hover) {
+      .footer-link-button:hover {
+        color: #666; /* ホバーで少しグレーに */
+        transform: scale(1.1);
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -415,6 +461,13 @@
       <a id="shareButton" href="#" target="_blank" class="share-button">
         <i class="fa-solid fa-share-nodes share-icon"></i>
         <i class="fa-brands fa-x-twitter"></i>でシェアする！
+      </a>
+    </div>
+
+    <!-- トップページリンク -->
+    <div class="site-link-container">
+      <a href="https://tonpppm.github.io/" class="site-link">
+        <i class="fa-solid fa-house"></i> トップページへ
       </a>
     </div>
 

@@ -144,44 +144,44 @@
     }
 
     /* タブや本文全体 */
-      .wrapper {
-        max-width: 100%;
-        min-height: 100%;
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        padding: 2em;
-        background: #fff; /* 白背景 */
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* ふんわり影を追加 */
-      }
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      max-width: 100%;
+      min-height: 100%;
+      padding: 2em;
+      background: #fff; /* 白背景 */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* ふんわり影を追加 */
+    }
 
 
     /* 🎀フッター */
     .site-footer-bg {
       position: relative;
-      background-color: #fee1e6;
       width: 100%;
       padding-bottom: 30px;
+      background-color: #fee1e6;
     }
     .moco-row-reverse {
       position: absolute;
-      top: -30px;
-      left: 0;
+      z-index: 1;
       width: 100%;
       height: 40px;
+      top: -30px;
+      left: 0;
       background:
         radial-gradient(circle at 50% 100%, #fee1e6 50%, transparent 51%)
         center bottom / 50px 50px repeat-x;
-      z-index: 1;
     }
 
     .site-footer {
       position: relative;
+      z-index: 2;
+      padding: 0.5em;
       color: #666;
       text-align: center;
       font-size: 0.85em;
-      padding: 0.5em;
-      z-index: 2;
     }
 
     h1 {
@@ -244,7 +244,7 @@
     /* トップに戻る */
     #toTopBtn {
       position: fixed;
-      cursor: pointer;
+      z-index: 9999; /* 他の要素に埋もれないように */
       width: 44px;
       height: 44px;
       right: 24px;
@@ -254,8 +254,8 @@
       opacity: 0; /* 最初は見えないようにする */
       border: none; /* デフォルトの枠線を消す */
       pointer-events: none; /* 見えないときは押せないようにする */
+      cursor: pointer;
       transition: opacity 0.3s ease, transform 0.2s ease;
-      z-index: 9999; /* 他の要素に埋もれないように */
     }
     #toTopBtn:focus {
       outline: none;
@@ -363,12 +363,12 @@
     }
 
     ul {
-      padding-left: 1em; /* ちょっと控えめにする。0にすると完全に揃う */
       margin-left: 0;     /* 左の余白をゼロにして、はみ出しを防ぐ */
+      padding-left: 1em; /* ちょっと控えめにする。0にすると完全に揃う */
     }
     ol {
-      padding-left: 1.5em; /* ちょっと控えめにする。0にすると完全に揃う */
       margin-left: 0;     /* 左の余白をゼロにして、はみ出しを防ぐ */
+      padding-left: 1.5em; /* ちょっと控えめにする。0にすると完全に揃う */
 
     }
     li {
@@ -382,13 +382,13 @@
     }
     .custom-list li {
       position: relative;
-      padding-left: 1em;
       margin-bottom: 0.3em;
+      padding-left: 1em;
     }
 
     .custom-list li::before {
-      content: '';
       position: absolute;
+      content: '';
       top: 0.6em;
       left: 0;
       width: 0.3em;
@@ -399,13 +399,13 @@
 
     /* 📑▼目次全体のボックスデザイン */
     .table_of_contents {
+      display: block;
+      position: relative;
       width: 100%;
       margin: 1em 0 0 0;
       padding: 0.8em 1em;
-      display: block;
-      position: relative;
-      border: 3px solid #bbb; /* 外枠をグレーの太線に */
       background: #fff; /* 背景を白に */
+      border: 3px solid #bbb; /* 外枠をグレーの太線に */
       border-radius: 20px;
     }
 
@@ -443,8 +443,8 @@
 
     /* 丸アイコンの共通スタイル（ピンク or 黄緑） */
     .toc-list li::before {
-      content: '';
       position: absolute;
+      content: '';
       left : 0.5em; /* 左端から丸まで */
       width: 0.9em;
       height: 0.9em;
@@ -455,8 +455,8 @@
 
     /* 矢印マーク（白色の斜め矢印） */
     .toc-list li::after {
-      content: '';
       position: absolute;
+      content: '';
       left: 0.9em; /* 左端から矢印まで */
       width: 0.25em;
       height: 0.25em;
@@ -520,13 +520,13 @@
       transition: all 0.2s; /* ホバー時の滑らかな変化 */
     }
     .external-link::after {
-      width: 100%;
       position: absolute;
       content: "";
-      background-color: #f28da6;
+      width: 100%;
       bottom: 0.35em; /* 要素の下端からの距離 */
       height: 1px; /* 下線の高さ */
       left: 0;
+      background-color: #f28da6;
       transform-origin: left top; /* 変形の原点を左に指定 */
       transform: opacity(1, 1); /* 下線を横方向に1倍、縦方向に1倍に変形（表示） */
       transition: background-color 0.2s, transform 0.2s;
@@ -549,13 +549,13 @@
     }
     .video-container {
       position: relative;
-      margin: 1.5em 0;
-      padding-bottom: 56.25%; /* 16:9比率 */
       max-width: 560px;
       height: 0;
       max-height: 315px;
-      overflow: hidden;
+      margin: 1.5em 0;
+      padding-bottom: 56.25%; /* 16:9比率 */
       border-radius: 12px;
+      overflow: hidden;
     }
     .video-container iframe {
       position: absolute;
@@ -572,8 +572,8 @@
       margin-top: 2em;
     }
     .icon-img img {
-      position: relative;
       display: inline-block;
+      position: relative;
       width: 130px;
       height: 130px;
       max-width: 100%;
@@ -755,34 +755,34 @@
     /* 💬タブ全体を囲むコンテナの設定 */
     .tab-wrap {
       display: flex;
+      position: relative;
       justify-content: center; /* 中央揃え！ */
       flex-wrap: wrap;
       gap: 12px; /* タブ同士の隙間 */
       margin-bottom: 20px;
-      position: relative;
     }
 
     /* タブラベルの基本スタイル */
     .tab-label {
-      position: relative;
       display: inline-block;
+      position: relative;
+      order: -1;
+      flex: 1 1 100px; /* flex-grow: 1（同じ幅で育つ） flex-shrink: 1（必要なら縮む） flex-basis: 100px（理想サイズ） */
+      max-width: 200px; /* それ以上広がらない */
+      padding: 10px 0.8em;
+      white-space: nowrap;
       color: #666;
       font-size: 0.9em;
       font-weight: bold;
       letter-spacing: -0.03em; /* 文字の間隔を少し狭く */
       text-align: center;
-      padding: 10px 0.8em;
+      background: #fff; /* 背景白 */
       border: 2px solid #fea9ba; /* タブの枠線ピンク */
       border-radius: 99px; /* タブを丸く */
-      background: white; /* 背景白 */
+      box-shadow: 2px 2.5px 0 #fea9ba; /* 立体感のある影 */
       cursor: pointer;
       transition: box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-      box-shadow: 2px 2.5px 0 #fea9ba; /* 立体感のある影 */
       user-select: none;
-      white-space: nowrap;
-      order: -1;
-      flex: 1 1 100px; /* flex-grow: 1（同じ幅で育つ） flex-shrink: 1（必要なら縮む） flex-basis: 100px（理想サイズ） */
-      max-width: 200px; /* それ以上広がらない */
     }
 
     /* タブラベルの三角初期状態（非表示） */
